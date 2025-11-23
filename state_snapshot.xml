@@ -1,0 +1,42 @@
+<state_snapshot>
+    <overall_goal>
+        Implementar mensajería de audio y adjuntar archivos en el chat, y asegurar la sincronización del estado del chat entre diferentes componentes de la aplicación.
+    </overall_goal>
+
+    <key_knowledge>
+        - El proyecto utiliza React, Supabase (base de datos, tiempo real, almacenamiento) y TypeScript.
+        - Las políticas de seguridad a nivel de fila (RLS) de Supabase son cruciales para la seguridad de los datos y el almacenamiento.
+        - Se necesitaba una interfaz de usuario personalizada para el reproductor de audio para garantizar una funcionalidad consistente en todos los navegadores.
+        - La depuración requirió la corrección de problemas de permisos SQL y errores críticos de renderizado frontend debido a la falta de importaciones.
+        - La funcionalidad de adjuntar archivos (imágenes) se añadió a la burbuja de chat (`ChatSystem.tsx`).
+    </key_knowledge>
+
+    <file_system_state>
+        - MODIFIED: `src/components/ReviewsSection.tsx` - Se corrigió la visualización del avatar del usuario en las reseñas pasando la prop `src`.
+        - MODIFIED: `migraciones_sql/46_create_audio_chat_bucket.sql` - Se eliminaron las declaraciones `COMMENT ON POLICY` para resolver errores de permisos SQL.
+        - MODIFIED: `src/hooks/useChat.ts` - Se añadió `audio_url` a la interfaz `ChatMessage`, se implementó la función `sendAudio`, y se mejoraron las actualizaciones optimistas y el manejo de mensajes en tiempo real para evitar duplicados. También se añadió la función `sendImage`.
+        - MODIFIED: `src/components/ChatSystem.tsx` - Se implementó la lógica y la interfaz de usuario para la grabación/reproducción de audio, se integró el componente `AudioPlayer`, y se refactorizó para consumir `ChatContext`. Se reañadieron importaciones críticas faltantes para resolver el error de pantalla en blanco. Se añadió la funcionalidad de adjuntar archivos (imágenes) con un input oculto y un botón `Paperclip`.
+        - MODIFIED: `src/AppConRouter.tsx` - Se envolvió el contenido principal de la aplicación con `ChatProvider` y se refactorizó `AppContent` para usar `useChatContext`.
+        - MODIFIED: `src/pages/MensajesPage.tsx` - Se refactorizó para consumir el estado y las acciones globales del chat desde `ChatContext`.
+        - CREATED: `migraciones_sql/45_add_audio_to_chat.sql` - Se añadió la columna `audio_url` a la tabla `mensajes` y se actualizó RLS para los mensajes de chat.
+        - CREATED: `migraciones_sql/46_create_audio_chat_bucket.sql` - Se definió y creó el bucket de almacenamiento `chat_audio` de Supabase con políticas RLS.
+        - CREATED: `src/components/ui/AudioPlayer.tsx` - Un componente React personalizado para mostrar y controlar mensajes de audio.
+        - CREATED: `src/contexts/ChatContext.tsx` - Un nuevo Contexto y Proveedor de React para centralizar y compartir el estado relacionado con el chat en toda la aplicación.
+    </file_system_state>
+
+    <recent_actions>
+        - Se resolvió un error de visualización donde las imágenes de perfil de usuario no aparecían en las secciones de reseñas.
+        - Se implementó con éxito la funcionalidad de mensajería de audio dentro del chat, incluyendo actualizaciones del esquema de la base de datos, configuración de Supabase Storage y lógica frontend.
+        - Se mitigó un error de ejecución SQL relacionado con las políticas de almacenamiento ajustando el script de migración.
+        - Se corrigió un error crítico de renderizado frontend (pantalla en blanco) asegurando que todas las importaciones de React requeridas estuvieran presentes en `ChatSystem.tsx`.
+        - Se refactorizó todo el sistema de gestión de estado del chat para usar un `ChatContext` centralizado, asegurando la consistencia de datos y funcionalidad entre el modal de chat y la página de mensajes dedicada.
+        - Se añadió la funcionalidad de adjuntar archivos (imágenes) a la burbuja de chat (`ChatSystem.tsx`), incluyendo la importación del icono `Paperclip`, la adición de `imageInputRef`, la implementación de `handleImageSelect` y la integración de los elementos de la interfaz de usuario.
+    </recent_actions>
+
+    <current_plan>
+        - Todas las tareas principales relacionadas con la implementación de mensajes de audio, la sincronización del estado del chat y la adición de la funcionalidad de adjuntar archivos se han completado.
+        - El usuario ha confirmado que el problema de la pantalla en blanco está resuelto y que la función de audio y adjuntar archivos funciona.
+        - El problema de sincronización debería estar resuelto gracias a la refactorización.
+        - No se han identificado más tareas pendientes.
+    </current_plan>
+</state_snapshot>

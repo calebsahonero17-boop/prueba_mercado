@@ -1,0 +1,3 @@
+-- PASO 4: Habilitar RLS (Row Level Security)
+ALTER TABLE conversaciones ENABLE ROW LEVEL SECURITY;
+ALTER TABLE mensajes ENABLE ROW LEVEL SECURITY;

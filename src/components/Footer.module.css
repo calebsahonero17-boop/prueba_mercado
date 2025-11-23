@@ -1,0 +1,7 @@
+.footerLogo {
+  height: 240px; /* Aumentado desde 150px */
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0;
+}

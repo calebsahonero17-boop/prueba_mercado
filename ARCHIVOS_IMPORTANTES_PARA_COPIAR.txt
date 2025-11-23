@@ -1,0 +1,48 @@
+🚀 ARCHIVOS IMPRESCINDIBLES PARA NUEVA MÁQUINA
+======================================================
+
+📁 ARCHIVOS QUE DEBES COPIAR SÍ O SÍ:
+======================================================
+
+🔑 MUY CRÍTICO:
+---------------
+.env                           ← Sin esto NO funciona la app
+package.json                   ← Dependencias necesarias
+package-lock.json              ← Versiones exactas
+
+📂 CARPETAS COMPLETAS:
+----------------------
+src/                          ← Todo el código fuente
+public/                       ← Imágenes y archivos estáticos
+  └── logito-footer.png       ← Tu logo personalizado
+
+📄 ARCHIVOS DE CONFIGURACIÓN:
+-----------------------------
+tsconfig.json                 ← Configuración TypeScript
+vite.config.ts                ← Configuración del bundler
+tailwind.config.js            ← Configuración de estilos
+postcss.config.js             ← Procesador CSS
+eslint.config.js              ← Linter de código
+
+📋 DOCUMENTACIÓN (OPCIONAL):
+----------------------------
+*.md                          ← Documentación y guías
+*.sql                         ← Scripts de base de datos
+
+❌ NO NECESITAS COPIAR:
+----------------------
+node_modules/                 ← Se instala con npm install
+dist/                         ← Se genera con npm run build
+.git/                         ← Solo si usas git
+
+======================================================
+🔧 PASOS EN LA NUEVA MÁQUINA:
+======================================================
+
+1. Copiar archivos importantes
+2. npm install
+3. npm run dev
+4. ¡Listo!
+
+⚠️  RECORDATORIO: El archivo .env es CRÍTICO
+======================================================

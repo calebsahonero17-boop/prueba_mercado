@@ -1,0 +1,23 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo con gradiente -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1E40AF"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="16" cy="16" r="15" fill="url(#bg)" stroke="#ffffff" stroke-width="0.5"/>
+
+  <!-- Diseño moderno "ME" -->
+  <g>
+    <!-- M más grande y bold -->
+    <path d="M6 10 L6 22 L8.5 22 L8.5 16 L10.5 20 L12.5 20 L14.5 16 L14.5 22 L17 22 L17 10 L14 10 L11.5 16 L9 10 Z" fill="white"/>
+
+    <!-- E más grande y bold -->
+    <path d="M19 10 L19 22 L26 22 L26 20 L21.5 20 L21.5 17 L25 17 L25 15 L21.5 15 L21.5 12 L26 12 L26 10 Z" fill="#FEF08A"/>
+  </g>
+
+  <!-- Punto de marca boliviana -->
+  <circle cx="25" cy="13" r="1.5" fill="#10B981"/>
+</svg>

@@ -1,0 +1,1 @@
+DROP FUNCTION public.buscar_productos(text,uuid,numeric,numeric,text,uuid)

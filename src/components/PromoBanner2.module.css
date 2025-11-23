@@ -1,0 +1,115 @@
+.promoBannerContainer {
+  position: relative;
+  overflow: hidden; /* Ensure particles don't go outside */
+}
+
+.particle {
+  content: '';
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6); /* Luminous white dots */
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat 15s infinite ease-in-out;
+  z-index: 0; /* Behind the text */
+}
+
+.particle1 {
+  width: 8px;
+  height: 8px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 12s;
+}
+
+.particle2 {
+  width: 12px;
+  height: 12px;
+  top: 70%;
+  left: 80%;
+  animation-delay: 5s;
+  animation-duration: 18s;
+}
+
+.particle3 {
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 30%;
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
+
+.particle4 {
+  width: 10px;
+  height: 10px;
+  top: 10%;
+  left: 60%;
+  animation-delay: 7s;
+  animation-duration: 14s;
+}
+
+.particle5 {
+  width: 7px;
+  height: 7px;
+  top: 80%;
+  left: 40%;
+  animation-delay: 3s;
+  animation-duration: 16s;
+}
+
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px) scale(1);
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Fire Glow Pulse Effect */
+.fireGlowPulse {
+  animation: fireGlowPulse 3s infinite alternate;
+}
+
+@keyframes fireGlowPulse {
+  0% {
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.9), /* Darker Red */
+                 0 0 15px rgba(255, 0, 0, 0.7),
+                 0 0 25px rgba(255, 0, 0, 0.5);
+  }
+  33% {
+    text-shadow: 0 0 8px rgba(255, 255, 0, 0.9), /* Darker Yellow */
+                 0 0 15px rgba(255, 255, 0, 0.7),
+                 0 0 25px rgba(255, 255, 0, 0.5);
+  }
+  66% {
+    text-shadow: 0 0 8px rgba(0, 100, 0, 0.9), /* Darker Green */
+                 0 0 15px rgba(0, 100, 0, 0.7),
+                 0 0 25px rgba(0, 100, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.9), /* Back to Darker Red */
+                 0 0 15px rgba(255, 0, 0, 0.7),
+                 0 0 25px rgba(255, 0, 0, 0.5);
+  }
+}
+
+/* Ensure text is above particles */
+.promoBannerContainer p {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,48 @@
+-- Políticas SQL para el Bucket 'comprobantes_pago' en Supabase
+
+-- Estas son las expresiones SQL que debes copiar y pegar en los campos
+-- 'USING expression' y 'WITH CHECK expression' (si aplica)
+-- cuando estés configurando las políticas RLS para el bucket 'comprobantes_pago'
+-- a través de la interfaz de usuario de Supabase (Storage > tu_bucket > Policies).
+
+--------------------------------------------------------------------------------
+-- 1. Política de INSERT (Permitir a usuarios autenticados subir sus propios comprobantes)
+--------------------------------------------------------------------------------
+-- Nombre de la política (ejemplo): Allow authenticated users to upload their own payment proofs
+-- Target Roles: authenticated
+
+-- USING expression:
+(bucket_id = 'comprobantes_pago' AND auth.uid() = (storage.foldername(name))[1]::uuid)
+
+-- WITH CHECK expression:
+(bucket_id = 'comprobantes_pago' AND auth.uid() = (storage.foldername(name))[1]::uuid)
+
+
+--------------------------------------------------------------------------------
+-- 2. Política de SELECT (Permitir a usuarios autenticados ver sus propios comprobantes)
+--------------------------------------------------------------------------------
+-- Nombre de la política (ejemplo): Allow authenticated users to view their own payment proofs
+-- Target Roles: authenticated
+
+-- USING expression:
+(bucket_id = 'comprobantes_pago' AND auth.uid() = (storage.foldername(name))[1]::uuid)
+
+
+--------------------------------------------------------------------------------
+-- 3. Política de UPDATE (Permitir a usuarios autenticados actualizar sus propios comprobantes)
+--------------------------------------------------------------------------------
+-- Nombre de la política (ejemplo): Allow authenticated users to update their own payment proofs
+-- Target Roles: authenticated
+
+-- USING expression:
+(bucket_id = 'comprobantes_pago' AND auth.uid() = (storage.foldername(name))[1]::uuid)
+
+
+--------------------------------------------------------------------------------
+-- 4. Política de DELETE (Permitir a usuarios autenticados eliminar sus propios comprobantes)
+--------------------------------------------------------------------------------
+-- Nombre de la política (ejemplo): Allow authenticated users to delete their own payment proofs
+-- Target Roles: authenticated
+
+-- USING expression:
+(bucket_id = 'comprobantes_pago' AND auth.uid() = (storage.foldername(name))[1]::uuid)
